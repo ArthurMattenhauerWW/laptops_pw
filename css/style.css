@@ -1,0 +1,93 @@
+.navbar-azul {
+    background-color: #03031b !important ;
+}
+
+
+/* Dropdown azul escuro */
+
+
+/* O container do dropdown */
+.dropdown-menu {
+    background-color: #03031b;
+    border-color: #03031b;
+}
+
+/* Itens dentro do dropdown */
+.dropdown-menu .dropdown-item {
+    color: #ffffff;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+    background-color: #080b36;
+    color: #ffffff;
+}
+
+/* Linha divisória */
+.dropdown-menu .dropdown-divider {
+    border-color: #080b36;
+}
+
+.icone-branco {
+    color: #fbf6e8;
+}
+
+.text-offwhite {
+    color: #fbf6e8 !important;
+}
+
+.text-azul {
+    color: #03031b !important;
+}
+
+.btn-azul {
+    background-color: #03031b;
+    border-color: #03031b;
+    color: #03031b;
+}
+.btn-azul:hover {
+    background-color: #080b36;
+    border-color: #080b36;
+    color: #080b36;
+}
+
+.btn-azulclaro {
+    background-color: #1d3c6a;
+    border-color: #1d3c6a;
+    color: #1d3c6a;
+}
+.btn-azulclaro:hover {
+    background-color: #0e1946;
+    border-color: #0e1946;
+    color: #0e1946;
+}
+
+.btn-azulclarissimo {
+    background-color: #0098c1;
+    border-color: #0098c1;
+    color: #0098c1;
+}
+.btn-azulclarissimo:hover {
+    background-color: #016ba7;
+    border-color: #016ba7;
+    color: #016ba7;
+}
+
+.foto-laptop-index {
+    width: 80px;
+    height:80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.foto-laptop-view {
+    width: 160px;
+    height:160px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.foto-icon {
+    width: 10px;
+    height:auto;
+}
