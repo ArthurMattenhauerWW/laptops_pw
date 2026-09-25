@@ -24,19 +24,19 @@
             background-color: #999999;
             border-color: #cccccc;
             color: #FFFFFF;
-            }
-        
-        
-        
+        }
+        .bg-azul-claro {
+            background-color: #000d31 !important; /* Azul mais claro que o bg-dark */
+        }
     </style>
 </head>
 <body>
 
 
     
-    <nav class="navbar navbar-expand-lg navbar-azul bg-dark fixed-top py-4" data-bs-theme="dark" >
+    <nav class="navbar navbar-expand-lg navbar-azul bg-azul-claro fixed-top py-1" data-bs-theme="dark" >
         <div class="container-fluid"> 
-            <a class="navbar-brand ms-2" href="<?php echo BASEURL; ?>index.php"><img src="<?php echo BASEURL; ?>assets/img/logo.png" alt="Logo" width=auto height="70" class="ms-5 me-3"></a>
+            <a class="navbar-brand ms-2" href="<?php echo BASEURL; ?>index.php"><img src="<?php echo BASEURL; ?>assets/img/logo.png" alt="Logo" width=auto height="100" style="max-height: 100px;" class="ms-5 me-3"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarcrud" aria-controls="navbarcrud" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -44,12 +44,12 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-user-group icone-branco"></i> Clientes
+                            <i class="fa-solid fa-laptop"></i> Laptops
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item text-offwhite dropdown-azul" href="<?php echo BASEURL; ?>laptops"><i class="fa-solid fa-user-group icone-branco"></i> Gerenciar Clientes</a></li>
+                            <li><a class="dropdown-item text-offwhite dropdown-azul" href="<?php echo BASEURL; ?>laptops"><i class="fa-solid fa-laptop-code"></i> Gerenciar Laptops</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-offwhite" href="<?php echo BASEURL; ?>laptops/add.php"><i class="fa-solid fa-user-plus icone-branco"></i> Novo Cliente</a></li>
+                            <li><a class="dropdown-item text-offwhite" href="<?php echo BASEURL; ?>laptops/add.php"><i class="fa-solid fa-laptop-medical"></i> Novo Laptop</a></li>
                         </ul>
                     </li>
                 </ul>

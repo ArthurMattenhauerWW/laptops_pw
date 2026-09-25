@@ -9,7 +9,6 @@
   <hr />
   
   <div class="row">
-    <
     <div class="col-md-6">
       <div class="form-group mb-3">
         <label for="marca">Marca</label>
@@ -46,7 +45,7 @@
   <div id="actions" class="row mt-3">
     <div class="col-md-12">
       <button type="submit" class="btn btn-azul text-offwhite"><i class="fa-solid fa-floppy-disk text-offwhite"></i> Salvar</button>
-      <a href="index.php" class="btn btn-azulclaro text-offwhite"><i class="fa-solid fa-circle-left text-offwhite"></i> Cancelar</a>
+      <a href="index.php" class="btn btn-azulclaro text-offwhite"><i class="fa-solid fa-ban"></i> Cancelar</a>
     </div>
   </div>
 </form>

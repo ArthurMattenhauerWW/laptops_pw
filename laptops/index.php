@@ -6,10 +6,10 @@ include HEADER_TEMPLATE; ?>
 <header>
     <div class="row">
         <div class="col-sm-6">
-            <h2 class="mt-3 text-azul">Clientes</h2>
+            <h2 class="mt-3 text-azul">Laptops</h2>
         </div>
         <div class="col-sm-6 text-end h2">
-            <a class="btn btn-azul mt-3 text-offwhite" href="add.php"><i class="fa-solid fa-user-plus"></i> Novo Cliente</a>
+            <a class="btn btn-azul mt-3 text-offwhite" href="add.php"><i class="fa-solid fa-laptop-medical"></i> Novo Laptop</a>
             <a class="btn btn-azulclaro mt-3 text-offwhite" href="index.php"><i class="fa fa-refresh "></i> Atualizar</a>
         </div>
     </div>
@@ -34,7 +34,7 @@ include HEADER_TEMPLATE; ?>
             <th class="text-azul">Modelo</th>
             <th class="text-azul">Imagem</th>
             <th class="text-azul">Atualizado em</th>
-            <th class="text-azul">Opções</th>
+            <th class="text-azul text-end">Opções</th>
         </tr>
     </thead>
     <tbody>
