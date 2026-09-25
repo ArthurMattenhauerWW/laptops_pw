@@ -106,7 +106,7 @@ function save($table = null, $data = null) {
  * Atualização/Edição de Laptop
  */
 function edit() {
-  $now = date_create('now', new DateTimeZone('America/Sao_Paulo'));
+  $now = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
 
   if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -115,6 +115,17 @@ function edit() {
       $laptop = $_POST['laptop'];
       $laptop['datamod'] = $now->format("Y-m-d H:i:s");
 
+      
+      if (!empty($_FILES['foto']['name'])) {
+        $ext = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+        $nomeFoto = uniqid('laptop_') . '.' . $ext;
+        $destino = __DIR__ . '/../assets/img/' . $nomeFoto;
+
+        if (move_uploaded_file($_FILES['foto']['tmp_name'], $destino)) {
+          $laptop['foto'] = $nomeFoto;
+        }
+      }
+      
       update("laptops", $id, $laptop);
       header("location: index.php");
       exit();
