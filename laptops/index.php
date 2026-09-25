@@ -3,6 +3,63 @@ include "functions.php";
 index();
 include HEADER_TEMPLATE; ?>
 
+<style>
+
+.table {
+    vertical-align: middle;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table thead {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table th {
+    font-weight: 600;
+    padding: 14px 12px;
+}
+
+.table td {
+    padding: 12px;
+}
+
+.foto-laptop-index {
+    max-width: 80px;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.actions .btn-sm {
+    margin-left: 3px;
+    margin-bottom: 2px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-end;
+    }
+    
+    .actions .btn-sm {
+        width: 100%;
+        max-width: 120px;
+    }
+}
+</style>
+
+
 <header>
     <div class="row">
         <div class="col-sm-6">

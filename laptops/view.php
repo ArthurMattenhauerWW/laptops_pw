@@ -5,6 +5,30 @@
 
 <?php include HEADER_TEMPLATE; ?>
 
+<style>
+
+.foto-laptop-view {
+    max-width: 80%;
+    max-height: 190px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 10px;
+}
+
+#actions .btn {
+    margin-right: 8px;
+}
+
+#actions .btn i {
+    margin-right: 6px;
+}
+
+</style>
+
+
 <h2 class="mt-3">Laptop <?php echo $laptop['marca'] . " " . $laptop['modelo']; ?></h2>
 <hr>
 

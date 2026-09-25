@@ -8,6 +8,44 @@ try{
     $erro = $e;
 }?>
 
+<style>
+.btn-azul,
+.btn-azulclaro {
+    display: block;
+    width: 100%;
+    padding: 20px 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.icone-branco {
+    color: #ffffff;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.btn-azul p,
+.btn-azulclaro p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.alert-danger {
+    border-radius: 8px;
+    border-left: 5px solid #dc3545;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+</style>
+
+
 <h1 class="mt-3 text-azul">Bem-Vindos ao Nosso Site!</h1>
 <hr />
 
