@@ -15,23 +15,7 @@ function formatdata($data, $formato) {
   return $dt->format($formato);
 }
 
-/**
- * Formatar Telefones
- */
-function telefone($tel) {
-  return "(" . substr($tel, 0, 2) . ")" . substr($tel, 2, 5) . "-" . substr($tel, 7, 4);
-}
 
-function celular($tel) {
-  return "(" . substr($tel, 0, 2) . ") " . substr($tel, 2, 5) . "-" . substr($tel, 7, 4);
-}
-
-/**
- * Formatar CEP
- */
-function cep($cep) {
-  return substr($cep, 0, 5) . "." . substr($cep, 5, 3);
-}
 
 /**
  * Listagem de Laptops
@@ -56,33 +40,51 @@ function add() {
   if (!empty($_POST['laptop'])) {
     $today = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
     $laptop = $_POST['laptop'];
-    $laptop['modified'] = $laptop['created'] = $today->format("Y-m-d H:i:s");
-    
+    $laptop['datacad'] = $today->format("Y-m-d H:i:s");
+    $laptop['datamod'] = $today->format("Y-m-d H:i:s");
+
+    // Trata o upload da foto
+    if (!empty($_FILES['foto']['name'])) {
+      $ext = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+      $nomeFoto = uniqid('laptop_') . '.' . $ext;
+      $destino = __DIR__ . '/../assets/img/' . $nomeFoto;
+
+      if (move_uploaded_file($_FILES['foto']['tmp_name'], $destino)) {
+        $laptop['foto'] = $nomeFoto;
+      } else {
+        $laptop['foto'] = 'default.png';
+      }
+    } else {
+      $laptop['foto'] = 'default.png';
+    }
+
     save('laptops', $laptop);
     header('location: index.php');
     exit();
   }
 }
 
-/**
- * Insere um registro na tabela
- */
 function save($table = null, $data = null) {
+
   $database = open_database();
 
   $columns = null;
   $values = null;
 
+  //print_r($data);
+
   foreach ($data as $key => $value) {
+	//$columns = $columns . trim($key, "'") . ",";
     $columns .= trim($key, "'") . ",";
     $values .= "'$value',";
   }
 
-  // Remove a última vírgula
+  // remove a ultima virgula
   $columns = rtrim($columns, ',');
   $values = rtrim($values, ',');
   
-  $sql = "INSERT INTO $table ($columns) VALUES ($values);";
+  //$sql = "INSERT INTO " . $table . "($columns)" . " VALUES " . "($values);";
+  $sql = "INSERT INTO  $table ($columns) VALUES ($values);";
 
   try {
     $database->query($sql);
@@ -91,12 +93,14 @@ function save($table = null, $data = null) {
     $_SESSION['type'] = 'success';
   
   } catch (Exception $e) { 
-    $_SESSION['message'] = 'Não foi possível realizar a operação.<br>' . $e->getMessage();
+  
+    $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
     $_SESSION['type'] = 'danger';
   } 
 
   close_database($database);
 }
+
 
 /**
  * Atualização/Edição de Laptop
@@ -109,7 +113,7 @@ function edit() {
 
     if (isset($_POST['laptop'])) {
       $laptop = $_POST['laptop'];
-      $laptop['modified'] = $now->format("Y-m-d H:i:s");
+      $laptop['datamod'] = $now->format("Y-m-d H:i:s");
 
       update("laptops", $id, $laptop);
       header("location: index.php");
